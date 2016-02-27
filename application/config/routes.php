@@ -58,3 +58,4 @@ $route['Services'] = "/ServiceController";
 $route['About'] = "/AboutController";
 $route['Products'] = "/ProductsController";
 $route['Contact'] = "/ContactController";
+$route['Email'] = "/application/views/send_form_email.php";

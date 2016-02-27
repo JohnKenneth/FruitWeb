@@ -1,9 +1,11 @@
 <footer class="center-block footer">
-    <div class="container">
-        <!--<p class="text-muted">Place sticky footer content here.</p>-->
-       
+    <div class="top">
+		<div class="container">
+			<p>QUICK LINKS :</p>
+			<p>Home | Services | Contact Us | About Us | Products | Packages</p>
+		</div>
     </div>
     <div class="container bottom">
-         Copyright © Prutas ni Johann | Legal | Privacy
+         Copyright © Healthy Crate | Legal | Privacy
     </div>
 </footer>

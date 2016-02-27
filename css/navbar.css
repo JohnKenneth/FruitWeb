@@ -141,6 +141,12 @@ body{
 /* For Mobile */
 
 @media all and (max-width: 950px ){
+    .lead{
+        font-size: 12px;
+    }
+    .featurette-heading{
+        font-size: 24px;
+    }
     /* Open Menu */
     .navbar .navbar-toggle:focus, 
     .navbar .navbar-toggle:hover {
@@ -158,9 +164,9 @@ body{
     }
     
     .navbar > .navbar-brand{
-        height:30px; 
+        height:10px; 
         margin:0px;
-        margin-top: 5px;
+        margin-top: 2px;
         padding:0px;
     }
     /* Contact Information */
@@ -172,6 +178,7 @@ body{
     }
     .navbar .small{
         font-size:60%;
+        margin-top:5px;
     }
     /* Contact Information - end */
     

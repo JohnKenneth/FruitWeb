@@ -1,0 +1,633 @@
+/*!
+ * Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,
+body {
+    height: 100%;
+	position: relative;
+    background: #FFFBEF;
+	color: #034F11;
+}
+/* adjust body when menu is open */
+
+hr{
+	margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #FB6924;
+}
+
+.btn-default{
+	background-color: #B0E653;
+}
+.btn-default:hover{
+	background-color: #75A91A;
+}
+
+.topPadding{
+	padding-top:130px;
+}
+
+
+/*------------------------------------------ Navbar ------------------------------------------*/
+#navigation-bar {
+    height:140px;
+    position:fixed;
+	font: 18px Oswald, sans-serif;
+	background-image: url("../images/header.png");
+    background-repeat: repeat-x;
+	background-position:center center;
+	-o-background-size: 100% 100%, auto;
+	-moz-background-size: 100% 100%, auto;
+	-webkit-background-size: 100% 100%, auto;
+	background-size: 100% 100%, auto;
+	border:0px;
+}
+.navbar-inverse{
+	background: none;
+}
+#navigation-bar div.navbar-header{
+	top:30px;
+}
+#navigation-bar a.navbar-brand{
+    width:0px; 
+	padding:0px;
+}
+#navigation-bar a.navbar-brand > img{
+	position: relative;
+    width:190px; 
+	height: 140px;
+    margin-top: -5px; 
+    float:left;
+	z-index: 990;
+}
+#navigation-bar  .small{
+	font: 11px Oswald, sans-serif;
+}
+
+/* Contact Information */
+.navbar-toggle{
+	margin-top:15px;
+	margin-bottom:15px;
+	margin-right:0px;
+}
+.navbar  .accountLogo{
+    float:right;
+    width:30px;
+    margin-right:8px;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+	text-decoration: none;
+	z-index: 1;
+	color:#034F11;
+}
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+	color:#75A91A;
+}
+
+.navbar-inverse .navbar-nav>.open>a, 
+.navbar-inverse .navbar-nav>.open>a:focus, 
+.navbar-inverse .navbar-nav>.open>a:hover{
+    color: #75A91A;
+	background-color: #B0E653;
+}
+
+.navbar-inverse .navbar-toggle{
+	background-color: #076518;
+}
+.navbar-inverse .navbar-toggle:focus{
+	background-color: #B0E653;
+}
+.navbar-inverse .navbar-toggle:hover{
+	background-color: #75A91A;
+}
+
+
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px!important
+}
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    position: relative;
+    padding-top: 70px;
+    left: 0;
+}
+#page-content.slide-active {
+    padding-top: 0
+}
+
+/* put toggle bars on the left :: not using button */
+#slide-nav .navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    line-height: 0;
+    float: left;
+    margin: 0;
+    width: 30px;
+    height: 40px;
+    padding: 10px 0 0 0;
+    border: 0;
+    background: transparent;
+}
+/* icon bar prettyup - optional */
+#slide-nav .navbar-toggle > .icon-bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    margin: 5px 0 0 0;
+}
+#slide-nav .navbar-toggle.slide-active .icon-bar {
+    background: orange
+}
+.navbar-header {
+    position: relative
+}
+/* un fix the navbar when active so that all the menu items are accessible */
+.navbar.navbar-fixed-top.slide-active {
+    position: relative
+}
+
+ul.navbar-nav a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 5px;
+  left: 0;
+  background: #75A91A;
+  visibility: hidden;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: .25s linear;
+}
+
+ul.navbar-nav ul.dropdown-menu a:before {
+  position: relative;
+  bottom: 120px;
+  background: #75A91A;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+
+}
+ul.navbar-nav a:hover:before,
+ul.navbar-nav a:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+/*---------------------------------------- Navbar - end ----------------------------------------*/
+
+/*----------------------------------------- Carousel -------------------------------------------*/
+.carousel{
+    height: 522px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.item,
+.active {
+    height: 100%;
+}
+.carousel .item img{
+	margin-left: auto ;
+	margin-right: auto ;
+}
+
+/*---------------------------------------- Carousel - end --------------------------------------*/
+
+
+/*------------------------------------------- Search ---------------------------------------------*/
+.search > blockquote{
+	border-left: 3px solid #B0E653;
+}
+.search label{
+}
+
+/*---------------------------------------- Search - end --------------------------------------*/
+
+/*------------------------------------------- Header ---------------------------------------------*/
+
+.container-fluid  > .jumbotron{
+	padding:0px;
+	margin:0px 10px 0px 0px;
+	background-color: transparent;	
+}
+
+/*---------------------------------------- Header - end --------------------------------------*/
+
+
+
+/*------------------------------------------- Flip ---------------------------------------------*/
+/* entire container, keeps perspective */
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
+
+	-ms-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+		-moz-transform-style: preserve-3d; 
+		-ms-transform-style: preserve-3d; 
+		
+	text-align:center;
+
+}
+
+.flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+		
+/* END: Accommodating for IE */
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 450px;
+	padding-bottom:0px;
+}
+
+.flip-outer{
+	padding-bottom:20px;
+}
+
+.flipper {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-ms-transition: 0.6s;
+
+	-moz-transition: 0.6s;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.flipper .well{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateY(0deg);
+
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+	-moz-transform: rotateY(0deg);
+
+	-o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+	-o-transform: rotateY(0deg);
+
+	-ms-transition: 0.6s;
+	-ms-transform-style: preserve-3d;
+	-ms-transform: rotateY(0deg);
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	transform: rotateY(0deg);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	background: rgb(255, 250, 90);
+}
+
+.back {
+	background: rgb(255, 227, 221);
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.back img{
+	width:100%;
+	height:auto;
+}
+
+fieldset.info-border {
+    border: 1px groove #FB6924 !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.info-border {
+	font-size: 1.2em !important;
+	font-weight: bold !important;
+	text-align: left !important;
+	width:auto;
+	padding:0 10px;
+	border-bottom:none;
+	color:#034F11;
+}
+
+.info-border hr{
+	margin-top:10px;
+}
+
+.testimonials hr,
+.testimonials h3{
+	margin-top:10px;
+}
+
+.bx-wrapper{
+	margin-bottom:40px;
+	background-color:transparent;
+}
+.bx-wrapper .bx-viewport{
+	background-color:transparent;
+	border: 0px;
+	padding: 5px;
+    left: -5px; 
+	
+	-moz-box-shadow: 0 0 0px #ccc;
+    -webkit-box-shadow: 0 0 0px #ccc; 
+    box-shadow: 0 0 0px #ccc; 
+    -webkit-transform: translatez(0); 
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0); 
+}
+.bx-wrapper .bx-viewport ul{
+	padding-left:2px;
+}
+.bx-wrapper img,
+.bx-wrapper p {
+    margin-right: auto;
+    margin-left: auto;
+	text-align:center;
+}
+
+.bx-wrapper .bx-viewport blockquote{
+	border-left: 5px solid #F9C4C4
+}
+
+.bx-wrapper .testimonee{
+	margin-top:30px;
+	text-align:right;
+	margin-right:20px;
+}
+
+
+.bx-prev,
+.bx-next{
+	color:red;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.search{
+	padding-top:1%;
+}
+
+
+
+.footer {
+	background-color: #FAE40C;
+	position: absolute;
+    width: 100%;
+}
+
+.footer .top{
+	padding-top:3px;
+	background-color: #FDE89D;
+}
+
+/*-------------------------------------Override------------------------------*/
+.input-group .form-control,
+.input-group-btn{
+	z-index:0;
+}
+/*----------------------------------Override - end---------------------------*/
+
+
+/* Mobile CSS */
+@media all and (max-width: 768px ){
+	.container {
+		width: 100%;
+	}
+	#navigation-bar {
+		height:70px;
+	}
+	#navigation-bar div.navbar-header{
+		top:0px;
+	}
+	#navigation-bar a.navbar-brand > img{
+		height:70px;
+		width:90px;
+	}
+	.contact-detail{
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.navbar .small{
+        font-size:60%;
+        margin-top:15px;
+    }
+	
+	/* Contact Information */
+	#navigation-bar .contact-detail {
+        display:block;
+		margin-left:85px;
+		float:left;
+    }
+	
+	.side-collapse-container{
+	  width:100%;
+	  position:relative;
+	  right:0;
+	  transition:left .4s;
+	}
+	.side-collapse-container.out{
+	  left:200px;
+	}
+	.side-collapse {
+	  top:70px;
+	  bottom:0;
+	  right:0;
+	  width:200px;
+	  position:fixed;
+	  overflow:hidden;
+	  transition:width .4s;
+	}
+	.side-collapse.in {
+	  width:0;
+	}
+	ul.navbar-nav a:before {
+	  height: 0px;
+	}	
+	ul.navbar-nav > li:hover {
+	  background-color: #B0F488;
+	}
+
+	.carousel,
+	.carousel-inner{
+		height: 101.5%;
+	}
+	
+	.back img{
+		height:90%;
+		width:auto;
+	}
+
+}
+
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width:945px){
+	.carousel .item img{
+		height:110%;
+		max-width:none;
+		margin-left: auto ;
+		margin-right: auto ;
+	}
+}
+@media (max-width:767px) { 
+	#slide-nav .container {
+	    margin: 0!important;
+	    padding: 0!important;
+		height:100%;
+	}
+	#slide-nav .navbar-header {
+	    margin: 0 auto;
+	    padding: 0 15px;
+	}
+	#slide-nav .navbar.slide-active {
+	    position: absolute;
+	    width: 80%;
+	    top: -1px;
+	    z-index: 1000;
+	}
+	#slide-nav #slidemenu {
+	    background: #f7f7f7;
+	    left: -100%;
+	    width: 80%;
+	    min-width: 0;
+	    position: absolute;
+	    padding-left: 0;
+	    z-index: 2;
+	    top: -8px;
+	    margin: 0;
+	}
+	#slide-nav #slidemenu .navbar-nav {
+	    min-width: 0;
+	    width: 100%;
+	    margin: 0;
+	}
+	#slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+	    min-width: 0;
+	    width: 80%;
+	    white-space: normal;
+	}
+	#slide-nav {
+	    border-top: 0
+	}
+	.navbar-inverse{
+		background-color: #FDFFF7;
+	}
+	.nav>li{
+		border-top: 1px solid red;
+		border-bottom: 1px solid red;
+		margin-top:2px;
+	}
+	#slide-nav.navbar-inverse #slidemenu {
+	    background-color: #333
+	}
+	/* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+	#navbar-height-col {
+	    position: fixed;
+	    top: 0;
+	    height: 100%;
+      bottom:0;
+	    width: 80%;
+	    left: -80%;
+	    background: #f7f7f7;
+	}
+	#navbar-height-col.inverse {
+	    background: #333;
+	    z-index: 1;
+	    border: 0;
+	}
+	#slide-nav .navbar-form {
+	    width: 100%;
+	    margin: 8px 0;
+	    text-align: center;
+	    overflow: hidden;
+	    /*fast clearfixer*/
+	}
+	#slide-nav .navbar-form .form-control {
+	    text-align: center
+	}
+	#slide-nav .navbar-form .btn {
+	    width: 100%
+	}
+	
+	.carousel .item img{
+		height:110%;
+		max-width:none;
+		margin-left: -50%;
+	}
+}
+
+@media all and (max-width: 480px ){
+	/* Contact Information */
+	#navigation-bar .contact-detail {
+        display:none;
+    }
+	.carousel .item img{
+		height:110%;
+		max-width:none;
+		margin-left: -80%;
+	}
+}
+
+.ui-loader{
+	display:none;
+}
