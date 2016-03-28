@@ -13,13 +13,16 @@
 		<title>Healthy Crate</title>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link type="text/css" type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
 		
 		<!-- BXSlider CSS -->
-		<link href="css/jquery.bxslider.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.bxslider.css" rel="stylesheet" />
+		
+		<!-- Slick CSS -->
+		<link type="text/css" href="css/slick.css" rel="stylesheet" />
 
 		<!-- Custom CSS -->
-		<link href="css/style.css" rel="stylesheet" />
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,13 +34,16 @@
 		<!-- jQuery -->
 		<script src="js/lib/jquery-1.9.1.min.js"></script>
 		
+		
         <?php include("ImportScripts.php"); ?>
 		<script>
 			$(document).ready(function() { 
-				$(window).scroll(function(){
-					resizeNav();
-				});
-				$(window).bind("resize", resizeNav);
+				if(!isMobile()){
+					$(window).scroll(function(){
+						resizeNav();
+					});
+					$(window).bind("resize", resizeNav);
+				}
 			});
 			function resizeNav(){
 				var $nav = $('#navigation-bar');

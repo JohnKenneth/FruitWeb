@@ -20,15 +20,53 @@
     <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
     <!-- ================================================== -->
 	<!-- container -->
-	<div id="myCarousel" class="carousel slide">
+	<script type="text/javascript">
+         $(document).ready(function () {  
+			var slider = $('#myCarousel').bxSlider({
+					arrows: true,
+					pager:false,
+					adaptiveHeight:false,
+					slideMargin: 0,
+					wrapperClass: 'bx-wrapper2',
+					swipeThreshold: 1,
+					autoHover: true,
+					onSlideAfter:function(){
+						$("#myCarousel div").css('left','0px');
+					}
+				}); 
+					
+			if(!isIE() || !isMobile()){
+				$("#myCarousel div").drags();
+				$("#myCarousel").on("swiperight",function(event){
+					slider.goToPrevSlide();
+				});  
+				$("#myCarousel").on("swipeleft",function(event){
+					slider.goToNextSlide();
+				});
+			}              
+         });
+    </script>
+    <!-- Wrapper for slides -->
+	<div class="mainCarousel">
+		<div id="myCarousel" class="slider slick-slider" style="height: 100%;">
+		  <div class="item">
+			<div class="banner1" ></div>
+		  </div>
+
+		  <div class="item">
+			<div class="banner2" ></div>
+		  </div>
+		</div>
+	</div>
+<!--	<div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+<!--    <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+<!--    <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img src="images/banner1.png" alt="Chania">
       </div>
@@ -39,7 +77,7 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<!--    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
@@ -187,46 +225,46 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-4 flip-outer">
-					<div class=" flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class=" flip-container" >
 						<div class="flipper">
 							<div class="front jumbotron">
 								<!-- front content -->
 								<h2 class="page-header">Who We Are</h2>
-								<img class="featurette-image img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
+								<img class="text-center img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
 							</div>
 							<div class="back jumbotron">
 								<!-- back content -->
-								<img src="images/who_we_are.jpg" />
+								<img class="text-center img-responsive" src="images/who_we_are.jpg" />
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4 flip-outer">
-					<div class=" flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class=" flip-container">
 						<div class="flipper">
 							<div class="front jumbotron">
 								<!-- front content -->
 								<h2 class="page-header">How We Work</h2>
-								<img class="featurette-image img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
+								<img class="text-center img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
 							</div>
 							<div class="back jumbotron">
 								<!-- back content -->
-								<img src="images/how_we_work.jpg" />
+								<img class="text-center img-responsive" src="images/how_we_work.jpg" />
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-4 flip-outer">
-					<div class=" flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class=" flip-container">
 						<div class="flipper">
 							<div class="front jumbotron">
 								<!-- front content -->
 								<h2 class="page-header">Packages</h2>
-								<img class="featurette-image img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
+								<img class="text-center img-responsive" data-src="holder.js/300x300/auto" alt="Generic placeholder image">
 							</div>
 							<div class="back jumbotron">
 								<!-- back content -->
-								<img src="images/packages.jpg" />
+								<img class="text-center img-responsive" src="images/packages.jpg" />
 							</div>
 						</div>
 					</div>
@@ -240,7 +278,7 @@
 			<fieldset class="info-border">
 				<legend class="info-border"><h1>More Information</h1></legend>
 				<div class="row">
-					<div class="col-sm-5" style="border-right:1px solid #000;height:320px">
+					<div class="col-sm-5">
 						<!--Testimonials Start-->
 						<script type="text/javascript" src="js/lib/jquery.bxslider.min.js"></script>
 						<script type="text/javascript">

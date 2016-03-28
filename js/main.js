@@ -19,19 +19,23 @@ $(document).ready(function() {
 	$(function(){
 		$('#navigation-bar').data('size','big');
 	});
-	if(!isIE()){
-		$("#myCarousel .item").drags();
-		$("#myCarousel").on("swiperight",function(event){
-			$("#myCarousel").carousel('prev'); 
-		});  
-		$("#myCarousel").on("swipeleft",function(event){
-			$("#myCarousel").carousel('next');
-		});  
-		
-		$('#myCarousel').bind('slide.bs.carousel', function (e) {
-			$(".item").not(".active" ).css("left","0px");
-		});
-	}
+	
+	var scrolling = false;
+	
+	$(window).on("scroll", function() {
+		scrolling = true;
+	});
+	$(document).on("scrollstop",function(){
+	  scrolling = false;
+	});
+
+
+	$(document).on('touchstart click', '.flip-container ', function(event){
+		//BLOCK THE CLASS TOGGLE IF THE PAGE IS SCROLLING
+		if(!scrolling) {
+			$(this).find('.flipper').toggleClass('hover');
+		}
+	}); 
 });
 
 /* Drag */
@@ -116,4 +120,8 @@ function isIE() {
   // other browser
   return false;
 
+}
+
+function isMobile(){
+	return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 }

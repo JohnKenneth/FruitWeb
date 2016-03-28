@@ -20,15 +20,30 @@ hr{
     border-top: 1px solid #FB6924;
 }
 
+mark {
+    color: #FFE200;
+    background: #FFFBEF;
+}
+
 .btn-default{
 	background-color: #B0E653;
 }
+
 .btn-default:hover{
 	background-color: #75A91A;
 }
 
 .topPadding{
 	padding-top:130px;
+}
+
+.bx-wrapper .bx-controls-direction a{
+	z-index:99;
+	top:58%;
+}
+
+.img-responsive{
+	display:inline;
 }
 
 
@@ -183,7 +198,46 @@ ul.navbar-nav a:focus:before {
 /*---------------------------------------- Navbar - end ----------------------------------------*/
 
 /*----------------------------------------- Carousel -------------------------------------------*/
-.carousel{
+.mainCarousel .bx-wrapper{
+    height: 552px !important;
+	cursor: pointer;
+	overflow:hidden;
+}
+.slick-slide{
+	margin-left: auto ;
+	margin-right: auto ;
+	background-color: white;
+}
+
+.mainCarousel .bx-wrapper img{
+	width:100%;
+}
+
+.mainCarousel .bx-wrapper .bx-viewport,
+.mainCarousel .bx-wrapper .bx-viewport .item{
+	height: 100% !important;
+	margin-left: 3px;
+}
+
+.mainCarousel .bx-wrapper .bx-viewport .item > div{
+    background-repeat: repeat-x;
+	background-position:center center;
+	-o-background-size: 100% 100%, auto;
+	-moz-background-size: 100% 100%, auto;
+	-webkit-background-size: 100% 100%, auto;
+	background-size: 100% 100%, auto;
+    background-size: cover;   
+	height:100%;
+}
+
+.banner1{
+	background-image: url("../images/banner1.png");
+}
+
+.banner2{
+	background-image: url("../images/front2.jpg");
+}
+/*.carousel{
     height: 522px;
 	width: 100%;
 	cursor: pointer;
@@ -200,7 +254,8 @@ ul.navbar-nav a:focus:before {
 .carousel .item img{
 	margin-left: auto ;
 	margin-right: auto ;
-}
+}*/
+
 
 /*---------------------------------------- Carousel - end --------------------------------------*/
 
@@ -340,6 +395,11 @@ ul.navbar-nav a:focus:before {
 	height:auto;
 }
 
+
+
+/*------------------------------------------- Flip - END ---------------------------------------------*/
+
+/*------------------------------------------- More Info ---------------------------------------------*/
 fieldset.info-border {
     border: 1px groove #FB6924 !important;
     padding: 0 1.4em 1.4em 1.4em !important;
@@ -358,6 +418,10 @@ legend.info-border {
 	color:#034F11;
 }
 
+fieldset.info-border div.col-sm-5{
+	border-right: 1px groove #FB6924;
+}
+
 .info-border hr{
 	margin-top:10px;
 }
@@ -371,12 +435,10 @@ legend.info-border {
 	margin-bottom:40px;
 	background-color:transparent;
 }
+
 .bx-wrapper .bx-viewport{
 	background-color:transparent;
 	border: 0px;
-	padding: 5px;
-    left: -5px; 
-	
 	-moz-box-shadow: 0 0 0px #ccc;
     -webkit-box-shadow: 0 0 0px #ccc; 
     box-shadow: 0 0 0px #ccc; 
@@ -405,12 +467,7 @@ legend.info-border {
 	text-align:right;
 	margin-right:20px;
 }
-
-
-.bx-prev,
-.bx-next{
-	color:red;
-}
+/*------------------------------------------- More Info - END ---------------------------------------------*/
 
 /* Background images are set within the HTML using inline CSS, not here */
 
@@ -450,10 +507,24 @@ legend.info-border {
 
 
 /* Mobile CSS */
-@media all and (max-width: 768px ){
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width:998px){
 	.container {
-		width: 100%;
+		width: 90%;
 	}
+	.mainCarousel .bx-wrapper div.item:nth-child(even){
+		height:100%;
+	}
+	.mainCarousel .bx-wrapper img{
+		height:100%;
+		width: 120%;
+		max-width:none;
+		margin-left: auto ;
+		margin-right: auto ;
+	}
+}
+
+@media all and (max-width: 768px ){
 	#navigation-bar {
 		height:70px;
 	}
@@ -508,27 +579,22 @@ legend.info-border {
 	  background-color: #B0F488;
 	}
 
-	.carousel,
-	.carousel-inner{
-		height: 101.5%;
+	#myCarousel{
+		height: 100%;
 	}
 	
 	.back img{
 		height:90%;
 		width:auto;
 	}
-
-}
-
-/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
-@media (max-width:945px){
-	.carousel .item img{
-		height:110%;
-		max-width:none;
-		margin-left: auto ;
-		margin-right: auto ;
+	
+	fieldset.info-border div.col-sm-5{
+		border-right:none;
 	}
+
 }
+
+
 @media (max-width:767px) { 
 	#slide-nav .container {
 	    margin: 0!important;
@@ -609,14 +675,15 @@ legend.info-border {
 	    width: 100%
 	}
 	
-	.carousel .item img{
-		height:110%;
-		max-width:none;
-		margin-left: -50%;
+	.mainCarousel,
+	.mainCarousel .bx-wrapper{
+		height: 100% !important;
 	}
+	
+
 }
 
-@media all and (max-width: 480px ){
+@media all and (max-width: 526px ){
 	/* Contact Information */
 	#navigation-bar .contact-detail {
         display:none;
